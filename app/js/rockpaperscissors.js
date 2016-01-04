@@ -70,7 +70,7 @@ function playToFive() {
   while (playerWins < 5 && computerWins < 5) {
     var playerMove = getPlayerMove();
     var computerMove = getComputerMove();
-    var winner = getWinner(playerMove,computerMove);
+    var winner = getWinner(playerMove, computerMove);
 
     if (winner === 'player') {playerWins++;
     }
@@ -78,8 +78,14 @@ function playToFive() {
     }
 
     console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
+    console.log('Round winner/result is' + ' ' + winner);
     console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n');
   }
+    if (playerWins === 5) {
+        return 'You win the game! The final score is' + ' ' + [playerWins, computerWins];
+    } else if (computerWins === 5) {
+        return 'You lose, try again. The final score is' + ' ' + [playerWins, computerWins];
+    }
   // This function should continue to play Rock Paper Scissors until either the
   // player or the computer has won five times.
   // After each 'round', display some text in the console indicating who played
